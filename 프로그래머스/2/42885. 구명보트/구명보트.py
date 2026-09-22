@@ -6,12 +6,9 @@ def solution(people, limit):
     right=len(people)-1
     
     while left<=right:
-        if people[left]<=limit-people[right]:
+        if left<right and people[left]<=limit-people[right]:
             left+=1
-            right-=1
-            answer+=1
-        else:
-            right-=1
-            answer+=1
+        right-=1
+        answer+=1
     
     return answer

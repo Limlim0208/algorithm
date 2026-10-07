@@ -1,11 +1,8 @@
-import math
-
 def solution(brown, yellow):
-   
-    wh=brown+yellow # w*h
-    s=0.5*(brown+4) # w+h
+    total=brown+yellow
     
-    x1 = 0.5*(s+math.sqrt(s**2-4*wh))
-    x2 = 0.5*(s-math.sqrt(s**2-4*wh))
-    
-    return sorted([x1, x2], reverse=True)
+    for w in range(int(total**0.5), total):
+        if total % w == 0:
+            h=total//w
+            if brown == (2*w+2*h-4):
+                return sorted([w,h], reverse=True)

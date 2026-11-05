@@ -11,7 +11,7 @@ def solution(priorities, location):
         item = deq.popleft()
         # 큐에 있는 프로세스를 하나씩 뽑아서 확인
         
-        if len(deq) and max(p[0] for p in deq) > item[0]:
+        if deq and max(p[0] for p in deq) > item[0]:
             deq.append(item)
         else:
             answer+=1

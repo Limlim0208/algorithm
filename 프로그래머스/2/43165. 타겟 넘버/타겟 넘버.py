@@ -1,13 +1,17 @@
+answer=0
+
 def dfs(numbers, idx, total, target):
+    global answer
     if idx==len(numbers):
         if total==target:
-            return 1
-        return 0
+            answer+=1
+        return 
     
-    plus=dfs(numbers, idx+1, total+numbers[idx],target)
-    minus=dfs(numbers, idx+1, total-numbers[idx], target)
+    dfs(numbers, idx+1, total+numbers[idx],target)
+    dfs(numbers, idx+1, total-numbers[idx], target)
     
-    return plus+minus
     
 def solution(numbers, target):
-    return dfs(numbers, 0, 0,target)
+    global answer
+    dfs(numbers, 0, 0,target)
+    return answer

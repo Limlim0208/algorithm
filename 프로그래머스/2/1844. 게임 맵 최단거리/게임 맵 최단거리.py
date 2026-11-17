@@ -16,9 +16,11 @@ def solution(maps):
     
     while queue:
         y, x, d=queue.popleft()
+        
         for i in range(4):
             ny=y+y_move[i]
             nx=x+x_move[i]
+            
             if 0<=ny<=n-1 and 0<=nx<=m-1:
                 
                 if maps[ny][nx] and not visited[ny][nx]:

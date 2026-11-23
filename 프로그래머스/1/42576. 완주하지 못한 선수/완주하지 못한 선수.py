@@ -7,6 +7,6 @@ def solution(participant, completion):
     for name in completion:
         person[name]-=1
     
-    for name in person:
-        if person[name]>0:
-            return name
+    for k, v in person.items():
+        if v>0:
+            return k
